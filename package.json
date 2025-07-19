@@ -38,6 +38,7 @@
   ],
   "main": "./dist/extension",
   "dependencies": {
+    "vsce": "^2.15.0",
     "xregexp": "^5.0.1"
   },
   "contributes": {
@@ -266,6 +267,12 @@
             "markdownDescription": "Generate bool getters with an 'is' prefix. For example, a data member `bool enabled` will generate a getter named `isEnabled` rather than `getEnabled`.",
             "scope": "resource"
           },
+          "C_mantic.cpp.accessor.forceGetterPrefix": {
+            "type": "boolean",
+            "default": false,
+            "markdownDescription": "Enforces the insertion of the 'get' prefix in generated getters. By default, the this prefix is inserted only if the name colides with the data member.",
+            "scope": "resource"
+          },
           "C_mantic.cpp.accessor.getterDefinitionLocation": {
             "type": "string",
             "enum": [
@@ -398,7 +405,7 @@
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.4",
     "vscode-test": "^1.3.0",
-    "webpack": "^5.28.0",
+    "webpack": "^5.100.2",
     "webpack-cli": "^4.6.0"
   }
 }

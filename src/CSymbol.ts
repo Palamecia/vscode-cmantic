@@ -198,7 +198,7 @@ export default class CSymbol extends SourceSymbol {
             }
         }
 
-        if (formattedBaseName !== this.name) {
+        if (!cfg.forceGetterPrefix(this.uri) && formattedBaseName !== this.name) {
             return formattedBaseName;
         }
 

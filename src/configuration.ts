@@ -43,6 +43,7 @@ const defaultGenerateNamespaces = true;
 const defaultHeaderGuardStyle = HeaderGuardStyle.Define;
 const defaultHeaderGuardDefineFormat = '${FILE_NAME}_${EXT}';
 const defaultBoolGetterIsPrefix = false;
+const defaultForceGetterPrefix = false;
 const defaultAccessorDefinitionLocation = DefinitionLocation.Inline;
 const defaultResolveTypes = false;
 const defaultRevealNewDefinition = true;
@@ -176,6 +177,10 @@ export function headerGuardDefine(uri: vscode.Uri): string {
 
 export function boolGetterIsPrefix(scope: vscode.ConfigurationScope): boolean {
     return configuration(scope).get<boolean>('cpp.accessor.boolGetterIsPrefix', defaultBoolGetterIsPrefix);
+}
+
+export function forceGetterPrefix(scope: vscode.ConfigurationScope): boolean {
+    return configuration(scope).get<boolean>('cpp.accessor.forceGetterPrefix', defaultForceGetterPrefix);
 }
 
 export function getterDefinitionLocation(scope: vscode.ConfigurationScope): DefinitionLocation {
